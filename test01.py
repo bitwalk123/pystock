@@ -145,3 +145,15 @@ randomforest = RandomForestRegressor(random_state=0, n_jobs=-1)
 model_rf = randomforest.fit(features_train, target_train)
 pred = model_rf.predict(features_test)[0]
 print(pred, 'Random Forest')
+
+# PLS Regression
+pls = PLSRegression(n_components=20, max_iter=100000)
+model_pls = pls.fit(features_train, target_train)
+pred = model_pls.predict(features_test)[0][0]
+print(pred, 'PLS Regression')
+
+# Bayesian Ridge Regression.
+brr = linear_model.BayesianRidge()
+model_brr = brr.fit(features_train, target_train)
+pred = model_brr.predict(features_test)[0]
+print(pred, 'Bayesian Ridge Regression')
